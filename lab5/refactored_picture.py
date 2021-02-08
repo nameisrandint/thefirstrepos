@@ -1,9 +1,28 @@
 import pygame
 from pygame.draw import *
 
+FPS = 30
+
 
 def main():
+    pygame.init()  # инициализация
+    screen_size = ss = (800, 600)
+    screen = pygame.display.set_mode((screen_size[0], screen_size[1]))
+
     draw_house(250, 470, 400, 250)
+
+    clock = pygame.time.Clock()
+    pygame.display.update()  # отображение элементов на экране
+
+    finished = False
+
+    while not finished:
+        clock.tick(FPS)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                finished = True
+
+    pygame.quit()
 
 
 def draw_house(x, y, hight, width):
