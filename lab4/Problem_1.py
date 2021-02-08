@@ -1,7 +1,7 @@
 import pygame
 from pygame.draw import *
 
-pygame.init() # инициализация
+pygame.init()  # инициализация
 
 FPS = 30
 screen_size = (800, 600)
@@ -12,7 +12,7 @@ WHITE = (255, 255, 255)
 YELLOW = (255, 255, 0)
 RED = (255, 0, 0)
 
-rect(screen, WHITE, (0, 0, screen_size[0], screen_size[1]))
+rect(screen, WHITE, (0, 0, screen_size[0], screen_size[1]))  # фон
 circle(screen, YELLOW, (screen_size[0] // 2, screen_size[1] // 2), 250, 0)  # голова
 circle(screen, BLACK, (screen_size[0] // 2, screen_size[1] // 2), 250, 3)  # контур головы
 circle(screen, RED, (screen_size[0] // 2 - 90, screen_size[1] // 2 - 90), 50, 50)  # глаз
@@ -23,10 +23,8 @@ rect(screen, BLACK, (300, 370, 200, 30))  # рот
 polygon(screen, BLACK, [(300, 103), (380, 162), (368, 178), (287, 119)], 0) # левая бровь
 polygon(screen, BLACK, [(500, 103), (580, 162), (568, 178), (487, 119)], 0)  # правая бровь
 
-
-
 clock = pygame.time.Clock()
-pygame.display.update() #отображение элементов на экране
+pygame.display.update()  # отображение элементов на экране
 
 finished = False
 
