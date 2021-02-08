@@ -1,0 +1,134 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 559c7a7..5bd7616 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,2 +1,2 @@[m
+ # Файлы, которые не будут отслеживаться гитом[m
+[31m-.\.idea[m
+[32m+[m[32m*/.idea[m
+[1mdiff --git a/lab3/01_trying_pygame.py b/lab3/01_trying_pygame.py[m
+[1mdeleted file mode 100644[m
+[1mindex 44aea96..0000000[m
+[1m--- a/lab3/01_trying_pygame.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,16 +0,0 @@[m
+[31m-import pygame[m
+[31m-from pygame.draw import *[m
+[31m-[m
+[31m-FPS = 60[m
+[31m-[m
+[31m-pygame.init()[m
+[31m-[m
+[31m-screen = pygame.display.set_mode((300, 200))[m
+[31m-[m
+[31m-clock = pygame.time.Clock()[m
+[31m-[m
+[31m-while True:[m
+[31m-    clock.tick(60)[m
+[31m-    for event in pygame.event.get():[m
+[31m-        if event.type == pygame.QUIT:[m
+[31m-            pygame.quit()[m
+[1mdiff --git a/lab3/1_draw.py b/lab3/1_draw.py[m
+[1mdeleted file mode 100644[m
+[1mindex 25f9962..0000000[m
+[1m--- a/lab3/1_draw.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,29 +0,0 @@[m
+[31m-import pygame[m
+[31m-from pygame.draw import *[m
+[31m-[m
+[31m-pygame.init()[m
+[31m-[m
+[31m-FPS = 30[m
+[31m-screen = pygame.display.set_mode((400, 400))[m
+[31m-[m
+[31m-rect(screen, (255, 0, 255), (100, 100, 200, 200))[m
+[31m-rect(screen, (0, 0, 255), (100, 100, 200, 200), 5)[m
+[31m-polygon(screen, (255, 255, 0), [(100, 100), (200, 50),[m
+[31m-                                (300, 100), (100, 100)])[m
+[31m-polygon(screen, (0, 0, 255), [(100, 100), (200, 50),[m
+[31m-                              (300, 100), (100, 100)], 5)[m
+[31m-circle(screen, (0, 255, 0), (200, 175), 50)[m
+[31m-circle(screen, (255, 255, 255), (200, 175), 50, 5)[m
+[31m-[m
+[31m-pygame.display.update()[m
+[31m-clock = pygame.time.Clock()[m
+[31m-[m
+[31m-finished = False[m
+[31m-[m
+[31m-while not finished:[m
+[31m-    clock.tick(FPS)[m
+[31m-    for event in pygame.event.get():[m
+[31m-        if event.type == pygame.QUIT:[m
+[31m-            finished = True[m
+[31m-[m
+[31m-pygame.quit()[m
+[1mdiff --git a/lab3/Problem_1.py b/lab3/Problem_1.py[m
+[1mdeleted file mode 100644[m
+[1mindex 2a5c88d..0000000[m
+[1m--- a/lab3/Problem_1.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,35 +0,0 @@[m
+[31m-import pygame[m
+[31m-from pygame.draw import *[m
+[31m-[m
+[31m-pygame.init() # инициализация[m
+[31m-[m
+[31m-FPS = 30[m
+[31m-screen_size = (800, 600)[m
+[31m-screen = pygame.display.set_mode((screen_size[0], screen_size[1]))[m
+[31m-[m
+[31m-BLACK = (0, 0, 0)[m
+[31m-WHITE = (255, 255, 255)[m
+[31m-YELLOW = (255, 255, 0)[m
+[31m-RED = (255, 0, 0)[m
+[31m-[m
+[31m-rect(screen, WHITE, (0, 0, screen_size[0], screen_size[1]))[m
+[31m-circle(screen, YELLOW, (screen_size[0] // 2, screen_size[1] // 2), 250, 0) #голова[m
+[31m-circle(screen, BLACK, (screen_size[0] // 2, screen_size[1] // 2), 250, 3) #контур головы[m
+[31m-circle(screen, RED, (screen_size[0] // 2 - 90, screen_size[1] // 2 - 90), 50, 50) #глаз[m
+[31m-circle(screen, BLACK, (screen_size[0] // 2 - 90, screen_size[1] // 2 - 90), 25, 25) # зрачок[m
+[31m-circle(screen, RED, (screen_size[0] // 2 + 90, screen_size[1] // 2 - 90), 50, 50) #глаз[m
+[31m-circle(screen, BLACK, (screen_size[0] // 2 + 90, screen_size[1] // 2 - 90), 25, 25) # зрачок[m
+[31m-[m
+[31m-[m
+[31m-clock = pygame.time.Clock()[m
+[31m-pygame.display.update() #отображение элементов на экране[m
+[31m-[m
+[31m-finished = False[m
+[31m-[m
+[31m-while not finished:[m
+[31m-    clock.tick(FPS)[m
+[31m-    for event in pygame.event.get():[m
+[31m-        if event.type == pygame.QUIT:[m
+[31m-            finished = True[m
+[31m-[m
+[31m-pygame.quit()[m
+[1mdiff --git a/lab4/Problem_2.py b/lab4/Problem_2.py[m
+[1mindex e69de29..a1484bf 100644[m
+[1m--- a/lab4/Problem_2.py[m
+[1m+++ b/lab4/Problem_2.py[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32mimport pygame[m
+[32m+[m[32mfrom pygame.draw import *[m
+[32m+[m
+[32m+[m[32mpygame.init()  # инициализация[m
+[32m+[m
+[32m+[m[32mFPS = 30[m
+[32m+[m[32mscreen_size = ss = (800, 600)[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclock = pygame.time.Clock()[m
+[32m+[m[32mpygame.display.update()  # отображение элементов на экране[m
+[32m+[m
+[32m+[m[32mfinished = False[m
+[32m+[m
+[32m+[m[32mwhile not finished:[m
+[32m+[m[32m    clock.tick(FPS)[m
+[32m+[m[32m    for event in pygame.event.get():[m
+[32m+[m[32m        if event.type == pygame.QUIT:[m
+[32m+[m[32m            finished = True[m
+[32m+[m
+[32m+[m[32mpygame.quit()[m
+\ No newline at end of file[m
